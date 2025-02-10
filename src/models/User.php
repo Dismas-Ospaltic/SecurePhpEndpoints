@@ -26,7 +26,7 @@ class User {
     }
 
     public function getUserById($user_id) {
-        $stmt = $this->mysqli->prepare("SELECT user_id, email, created_at FROM users WHERE user_id = ?");
+        $stmt = $this->mysqli->prepare("SELECT id,user_id, email, created_at FROM users WHERE user_id = ?");
         $stmt->bind_param("s", $user_id); // Bind as string, since UUIDs are strings
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();

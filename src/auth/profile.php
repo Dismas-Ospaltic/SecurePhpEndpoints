@@ -11,7 +11,7 @@ function getProfile() {
         "id" => $user['id'],
         "user_id" => $user['user_id'],
         "email" => $user['email'],
-        "create_at" => $user['create_at']
+        "created_at" => $user['created_at']
     ]);
 }
 ?>
