@@ -29,6 +29,19 @@ if (!$mysqli->query($refreshTokensTable)) {
     die("Error creating refresh_tokens table: " . $mysqli->error);
 }
 
+//create blacklist table for revoked token
+$blacklistTabble = "CREATE TABLE revoked_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    token VARCHAR(512) NOT NULL,
+    revoked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+
+if(!$mysqli -> query($blacklistTabble)){
+    die("Error creating blacklist table table: " . $mysqli->error); 
+}
+
+
 echo "Database and tables created successfully.";
 
 $mysqli->close();
