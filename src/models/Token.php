@@ -100,6 +100,21 @@ class Token {
         }
     }
     
+
+  // Blacklist an access token (store in revoked_tokens table)
+  public function blacklistAccessToken($token) {
+    $stmt = $this->mysqli->prepare("INSERT INTO revoked_tokens (token, revoked_at) VALUES (?, NOW())");
+    $stmt->bind_param("s", $token);
+    return $stmt->execute();
+}
+
+// Check if an access token is blacklisted
+public function isAccessTokenRevoked($token) {
+    $stmt = $this->mysqli->prepare("SELECT id FROM revoked_tokens WHERE token = ?");
+    $stmt->bind_param("s", $token);
+    $stmt->execute();
+    return $stmt->get_result()->fetch_assoc() ? true : false;
+} 
     
 
 
