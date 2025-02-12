@@ -114,6 +114,11 @@ Here are some of the main API endpoints available in the project:
 - **Method**: POST  
 - **Endpoint**: `/api/refresh`  
 - **Request**:
+  ```json
+    {
+      "Authorization": "Bearer <access_token>"
+    }
+    ```
     ```json
     {
       "refresh_token": "<refresh_token>"
