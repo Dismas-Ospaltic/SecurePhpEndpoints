@@ -16,11 +16,13 @@ A PHP application to handle authentication operations securely.
 ## **Installation & Setup** ⚙️  
 
 ### **1️⃣ Clone the Repository**:  
-Run the following commands:  
-    ```bash
+Run the following commands: 
+ 
+  ```bash
 git clone https://github.com/Dismas-Ospaltic/SecurePhpEndpoints.git
 cd SecurePhpEndpoints
-    ```
+  ```
+
 
 ### **2️⃣ Install Dependencies with Composer**:
 Run the following command in your project root:
